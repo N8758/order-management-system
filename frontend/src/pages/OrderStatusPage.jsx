@@ -9,7 +9,7 @@ const OrderStatusPage = () => {
 
   useEffect(() => {
     const eventSource = new EventSource(
-      `http://localhost:5000/api/orders/${id}/stream`
+     `https://order-management-system-2-aq59.onrender.com/api/orders/${id}/stream`
     );
 
     eventSource.onmessage = (event) => {
@@ -45,7 +45,7 @@ const OrderStatusPage = () => {
     if (!confirmCancel) return;
 
     const res = await fetch(
-      `http://localhost:5000/api/orders/${order.id}/cancel`,
+      `https://order-management-system-2-aq59.onrender.com/api/orders/${order.id}/cancel`,
       { method: 'PUT' }
     );
 
